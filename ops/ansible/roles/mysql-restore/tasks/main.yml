@@ -1,13 +1,13 @@
 - name: copy mysql dump file to remote host
   copy: >
-    src={{ mysql_dump_archive }}
-    dest=/tmp/{{ mysql_dump_archive | basename }}
+    src={{ mysql_dump_file }}
+    dest=/tmp/{{ mysql_dump_file | basename }}
 
 - name: restore mysql archive
   mysql_db: >
     name={{ ocla_db_name }}
     state=import
-    target=/tmp/{{ mysql_dump_archive | basename }}
+    target=/tmp/{{ mysql_dump_file | basename }}
     login_user={{ ocla_db_user_name }}
     login_password={{ ocla_db_user_pass }}
     login_host="localhost"
