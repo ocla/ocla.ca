@@ -1,6 +1,52 @@
+#
+# apache
+#
+
 apache_document_root: "/var/www/{{ apache_server_name }}"
+
+# vars below are used by predefined role from ansible galaxy
+
 apache_remove_default_vhost: true
 apache_vhosts:
   - servername: "{{ apache_server_name }}"
     documentroot: "{{ apache_document_root }}"
+
+#
+# mysql
+#
+
+ocla_db_user_name: oclaca_db_user
+ocla_db_user_pass: password
+ocla_db_name: ocla_wordpress
+
+# vars below are used by predefined role from ansible galaxy
+
+mysql_port: 3306
+mysql_bind_address: "127.0.0.1"
+mysql_root_password: ''              # The new root password
+mysql_default_root_password: ''      # The root password
+
+mysql_databases:
+  - name: "{{ ocla_db_name }}"
+    encoding: "utf8"
+
+mysql_users:
+  - name: "{{ ocla_db_user_name }}"
+    pass: "{{ ocla_db_user_password }}"
+    priv: "*.*:ALL"  # optional, defaults to "*.*:ALL"
+    host: "localhost"
+
+
+#
+# wordpress
+#
+
+# vars below are used by predefined role from ansible galaxy
+
+wp_version: 4.0
+wp_install_dir: "{{ apache_document_root }}"
+wp_db_name: "{{ ocla_db_name }}"
+wp_db_user: "{{ ocla_db_user_name }}"
+wp_db_password: "{{ ocla_db_user_pass }}"
+wp_db_host: "localhost"
 

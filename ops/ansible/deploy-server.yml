@@ -7,4 +7,6 @@
   roles:
     - apache_document_root
     - geerlingguy.apache
+    - ANXS.mysql
+    - darthwade.wordpress
   sudo: True
