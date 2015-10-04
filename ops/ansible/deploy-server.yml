@@ -1,0 +1,10 @@
+---
+
+- include: ../ansible-common/deploy-base-server.yml
+
+- name: deploying site
+  hosts: webservers
+  roles:
+    - apache_document_root
+    - geerlingguy.apache
+  sudo: True
