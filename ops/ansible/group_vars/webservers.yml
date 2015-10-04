@@ -20,7 +20,7 @@ apache_mods_enabled:
 
 ocla_db_user_name: ocla_db_user
 ocla_db_user_pass: password
-ocla_db_name: ocla_wordpress
+ocla_db_name: oclaca_wp934
 
 # vars below are used by predefined role from ansible galaxy
 
