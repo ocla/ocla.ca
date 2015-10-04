@@ -1,0 +1,6 @@
+apache_document_root: "/var/www/{{ apache_server_name }}"
+apache_remove_default_vhost: true
+apache_vhosts:
+  - servername: "{{ apache_server_name }}"
+    documentroot: "{{ apache_document_root }}"
+
