@@ -5,8 +5,10 @@
 - name: deploying site
   hosts: webservers
   roles:
-    - apache_php
+    - php_requirements
     - geerlingguy.apache
     - ANXS.mysql
     - darthwade.wordpress
+  tasks:
+    - service: name=apache2 state=restarted
   sudo: True
