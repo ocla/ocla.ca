@@ -1,7 +1,0 @@
-- name: create apache document root
-  file: >
-    path={{ apache_document_root }}
-    owner="www-data"
-    group="www-data"
-    state=directory
-  sudo: True
