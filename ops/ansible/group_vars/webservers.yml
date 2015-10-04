@@ -11,6 +11,9 @@ apache_vhosts:
   - servername: "{{ apache_server_name }}"
     documentroot: "{{ apache_document_root }}"
 
+apache_mods_enabled:
+  - php5
+
 #
 # mysql
 #

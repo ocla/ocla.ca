@@ -1,0 +1,6 @@
+- name: install mod_php apt requirements
+  apt: name={{ item }} state=present
+  sudo: True
+  with_items:
+    - php5
+

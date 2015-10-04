@@ -6,6 +6,7 @@
   hosts: webservers
   roles:
     - apache_document_root
+    - apache_php
     - geerlingguy.apache
     - ANXS.mysql
     - darthwade.wordpress
