@@ -15,7 +15,7 @@ apache_vhosts:
 # mysql
 #
 
-ocla_db_user_name: oclaca_db_user
+ocla_db_user_name: ocla_db_user
 ocla_db_user_pass: password
 ocla_db_name: ocla_wordpress
 
@@ -32,7 +32,7 @@ mysql_databases:
 
 mysql_users:
   - name: "{{ ocla_db_user_name }}"
-    pass: "{{ ocla_db_user_password }}"
+    pass: "{{ ocla_db_user_pass }}"
     priv: "*.*:ALL"  # optional, defaults to "*.*:ALL"
     host: "localhost"
 
