@@ -1,0 +1,2 @@
+# install with `cat vagrant-requirements.txt | grep -v ^\# | xargs vagrant plugin install`
+vagrant-hostsupdater
