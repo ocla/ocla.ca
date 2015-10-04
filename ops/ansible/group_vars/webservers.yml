@@ -12,7 +12,7 @@ apache_vhosts:
     documentroot: "{{ apache_document_root }}"
 
 apache_mods_enabled:
-  - php5
+  - php5.load
 
 #
 # mysql
