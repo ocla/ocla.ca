@@ -1,0 +1,6 @@
+---
+
+- name: restoring mysql database
+  hosts: webservers
+  roles:
+    - mysql-restore
