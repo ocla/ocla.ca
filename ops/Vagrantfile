@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # provision with ansible
     config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "ansible/deploy-server.yml"
+        ansible.playbook = "ansible/deploy_server.yml"
         ansible.groups = {
             "webservers" => ["vagrant.ocla.ca"]
         }
