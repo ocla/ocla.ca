@@ -1,6 +1,7 @@
 ---
 
-- name: restoring mysql database
+- name: restoring wordpress site
   hosts: webservers
   roles:
-    - mysql-restore
+    - mysql_restore
+    - wordpress_restore
