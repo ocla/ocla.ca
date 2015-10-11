@@ -1,0 +1,13 @@
+- name: define the WP_HOME variable in wp-config.php
+  lineinfile: >
+    dest={{ apache_document_root }}/wp-config.php
+    line="define('WP_HOME', 'http://{{ wordpress_site_name }}');"
+  sudo: True
+
+- name: define the WP_SITEURL variable in wp-config.php
+  lineinfile: >
+    dest={{ apache_document_root }}/wp-config.php
+    line="define('WP_SITEURL', 'http://{{ wordpress_site_name }}');"
+  sudo: True
+
+

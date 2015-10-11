@@ -9,6 +9,7 @@
     - geerlingguy.apache
     - ANXS.mysql
     - darthwade.wordpress
+    - wordpress_site_name
   tasks:
     - service: name=apache2 state=restarted
   sudo: True
