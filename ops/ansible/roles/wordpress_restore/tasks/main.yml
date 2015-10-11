@@ -1,0 +1,15 @@
+- name: create the directory in which to unarchive
+  file: path=/tmp/{{ wordpress_unarchived_path }} state=directory
+
+- name: upload and unpack wordpress backup archive
+  unarchive: >
+    src={{ wordpress_backup_archive }}
+    dest=/tmp/{{ wordpress_unarchived_path }}
+
+- name: restore wp-content/ directory
+  shell: /bin/cp -r /tmp/{{ wordpress_unarchived_path }}/wp-content/* {{ apache_document_root }}/wp-content/
+  sudo: True
+
+- name: restore .htaccess file
+  shell: /bin/cp /tmp/{{ wordpress_unarchived_path }}/.htaccess {{ apache_document_root }}/.htaccess
+  sudo: True

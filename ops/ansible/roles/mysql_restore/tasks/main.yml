@@ -3,7 +3,7 @@
     src={{ mysql_dump_file }}
     dest=/tmp/{{ mysql_dump_file | basename }}
 
-- name: restore mysql archive
+- name: restore mysql database
   mysql_db: >
     name={{ ocla_db_name }}
     state=import
