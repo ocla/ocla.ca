@@ -13,6 +13,7 @@ apache_vhosts:
 
 apache_mods_enabled:
   - php5.load
+  - rewrite.load
 
 #
 # mysql

@@ -1,6 +1,10 @@
 - name: create the directory in which to unarchive
   file: path=/tmp/{{ wordpress_unarchived_path }} state=directory
 
+- name: install the unzip packge
+  apt: pkg=unzip state=installed
+  sudo: True
+
 - name: upload and unpack wordpress backup archive
   unarchive: >
     src={{ wordpress_backup_archive }}
