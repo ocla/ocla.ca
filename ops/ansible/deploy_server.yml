@@ -2,7 +2,7 @@
 
 - include: ../ansible-common/deploy-base-server.yml
 
-- name: deploy site
+- name: deploy infrastructure requirements
   hosts: webservers
   roles:
     - php_requirements
