@@ -2,14 +2,32 @@
 
 - include: ../ansible-common/deploy-base-server.yml
 
-- name: deploying site
+- name: deploy site
   hosts: webservers
   roles:
     - php_requirements
     - geerlingguy.apache
     - ANXS.mysql
+  sudo: True
+
+- name: group servers which have wordpress installed
+  hosts: webservers
+  tasks:
+    - name: determine if wordpress is installed
+      stat: path={{ wp_install_dir}}/wp-config.php
+      register: wp_config
+    - name: group servers with wordpress installed
+      group_by: key=wordpress_installed_{{ wp_config.stat.exists }}
+
+- name: install wordpress if it is not installed
+  hosts: wordpress_installed_False
+  roles:
     - darthwade.wordpress
     - wordpress_site_name
+  sudo: True
+
+- name: restart apache
+  hosts: webservers
   tasks:
     - service: name=apache2 state=restarted
   sudo: True
