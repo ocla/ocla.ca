@@ -1,0 +1,19 @@
+---
+
+- name: upload backup data
+  hosts: webservers
+  tasks:
+    - name: create the remote backup restore directory
+      file: path={{ remote_backup_dir }} state=directory
+    - name: unarchive backup archive to remote host
+      unarchive: >
+        src={{ local_backup_archive }}
+        dest={{ remote_backup_dir }}
+
+- name: restore site
+  hosts: webservers
+  roles:
+    - mysql_restore
+    - wordpress_restore
+    - cleanup_backup_data
+

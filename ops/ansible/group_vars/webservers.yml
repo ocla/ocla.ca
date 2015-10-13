@@ -54,3 +54,11 @@ wp_db_user: "{{ ocla_db_user_name }}"
 wp_db_password: "{{ ocla_db_user_pass }}"
 wp_db_host: "localhost"
 
+#
+# backup and restore
+#
+
+remote_backup_dir: /tmp/ocla.ca_backup
+remote_backup_mysql_dump: "{{ remote_backup_dir }}/oclaca_wp934.sql"
+remote_backup_wordpress_dir: "{{ remote_backup_dir }}/wordpress"
+

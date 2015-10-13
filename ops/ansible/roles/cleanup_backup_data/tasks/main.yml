@@ -1,0 +1,2 @@
+- name: remove backup directory from remote host
+  file: path={{ remote_backup_dir }} state=absent

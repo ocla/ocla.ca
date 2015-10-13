@@ -1,18 +1,9 @@
-- name: copy mysql dump file to remote host
-  copy: >
-    src={{ mysql_dump_file }}
-    dest=/tmp/{{ mysql_dump_file | basename }}
-
 - name: restore mysql database
   mysql_db: >
     name={{ ocla_db_name }}
     state=import
-    target=/tmp/{{ mysql_dump_file | basename }}
+    target={{ remote_backup_mysql_dump }}
     login_user={{ ocla_db_user_name }}
     login_password={{ ocla_db_user_pass }}
     login_host="localhost"
-
-- name: remove dump file
-  file: path=/tmp/{{ mysql_dump_file | basename }} state=absent
-  sudo: True
 

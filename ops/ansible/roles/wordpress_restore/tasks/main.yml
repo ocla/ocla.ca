@@ -1,23 +1,8 @@
-- name: create the directory in which to unarchive
-  file: path={{ wordpress_unarchived_path }} state=directory
-
-- name: install the unzip packge
-  apt: pkg=unzip state=installed
-  sudo: True
-
-- name: upload and unpack wordpress backup archive
-  unarchive: >
-    src={{ wordpress_backup_archive }}
-    dest={{ wordpress_unarchived_path }}
-
 - name: restore wp-content/ directory
-  shell: /bin/cp -r {{ wordpress_unarchived_path }}/wp-content/* {{ apache_document_root }}/wp-content/
+  shell: /bin/cp -r {{ remote_backup_wordpress_dir }}/wp-content/* {{ apache_document_root }}/wp-content/
   sudo: True
 
 - name: restore .htaccess file
-  shell: /bin/cp {{ wordpress_unarchived_path }}/.htaccess {{ apache_document_root }}/.htaccess
+  shell: /bin/cp {{ remote_backup_wordpress_dir }}/.htaccess {{ apache_document_root }}/.htaccess
   sudo: True
 
-- name: remove unarchived directory
-  file: path={{ wordpress_unarchived_path }} state=absent
-  sudo: True
