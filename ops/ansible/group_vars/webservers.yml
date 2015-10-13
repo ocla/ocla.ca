@@ -62,3 +62,4 @@ remote_backup_dir: /tmp/ocla.ca_backup
 remote_backup_mysql_dump: "{{ remote_backup_dir }}/oclaca_wp934.sql"
 remote_backup_wordpress_dir: "{{ remote_backup_dir }}/wordpress"
 
+s3_backup_bucket_name: ocla.ca_backups
