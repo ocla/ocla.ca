@@ -1,6 +1,6 @@
 ---
 
-- name: upload backup data
+- name: upload backup data to remote host
   hosts: webservers
   tasks:
     - name: create the remote backup restore directory

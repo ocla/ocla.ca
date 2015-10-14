@@ -1,1 +1,0 @@
-wordpress_unarchived_path: /tmp/{{ wordpress_backup_archive | basename }}

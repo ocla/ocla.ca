@@ -1,0 +1,9 @@
+- name: ensure backup directory exists
+  file: path={{ remote_backup_wordpress_dir }} state=directory
+
+- name: copy wp-content/ directory to backup
+  command: cp -r {{ apache_document_root }}/wp-content {{ remote_backup_wordpress_dir }}/wp-content
+
+- name: copy .htaccess file to backup
+  command: cp {{ apache_document_root }}/.htaccess {{ remote_backup_wordpress_dir }}/.htaccess
+

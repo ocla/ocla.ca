@@ -1,0 +1,11 @@
+- name: ensure the backup directory exists
+  file: path={{ remote_backup_mysql_dump | dirname }} state=directory
+
+- name: dump mysql database
+  mysql_db: >
+    name={{ ocla_db_name }}
+    state=dump
+    target={{ remote_backup_mysql_dump }}
+    login_user={{ ocla_db_user_name }}
+    login_password={{ ocla_db_user_pass }}
+    login_host="localhost"

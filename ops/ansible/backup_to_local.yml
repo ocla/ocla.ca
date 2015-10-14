@@ -1,0 +1,15 @@
+---
+
+- name: backup site data
+  hosts: webservers
+  roles:
+    - wordpress_backup
+    - mysql_backup
+    - create_backup_archive
+
+- name: download backup archive
+  hosts: webservers
+  tasks:
+    - name: download the backup archive to the local machine
+      fetch: dest={{ local_backup_archive }} src={{ remote_backup_archive }}
+
