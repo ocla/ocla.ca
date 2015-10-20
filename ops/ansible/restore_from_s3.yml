@@ -11,6 +11,8 @@
         object={{ s3_backup_archive }}
         dest={{ remote_backup_dir | dirname }}/{{ s3_backup_archive | basename }}
         mode=get
+    - name: create backup directory if it does not exist
+      file: path={{ remote_backup_dir }} state=directory
     - name: unpack backup archive
       unarchive: >
         copy=no
