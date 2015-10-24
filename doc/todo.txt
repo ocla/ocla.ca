@@ -1,2 +1,7 @@
-move passwds etc out of ansible playbook
+test restore from s3
+
+dump mysql
+archive wp-content
+
+move database login info to ansible-inventories
 
