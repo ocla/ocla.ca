@@ -12,11 +12,12 @@
   tasks:
     - name: put the backup archive on s3
       s3: >
-        aws_access_key: {{ aws_access_key }}
-        aws_secret_key: {{ aws_secret_key }}
-        bucket: {{ s3_backup_bucket_name }}
-        src: {{ remote_backup_archive }}
-        mode: put
+        aws_access_key={{ aws_access_key }}
+        aws_secret_key={{ aws_secret_key }}
+        bucket={{ s3_backup_bucket_name }}
+        object={{ s3_backup_object_name }}
+        src={{ remote_backup_archive }}
+        mode=put
 
 - name: cleanup backup data
   hosts: webservers
