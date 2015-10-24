@@ -11,5 +11,5 @@
   hosts: webservers
   tasks:
     - name: download the backup archive to the local machine
-      fetch: dest={{ local_backup_archive }} src={{ remote_backup_archive }}
+      fetch: dest={{ local_backup_dir }} src={{ remote_backup_archive }}
 
