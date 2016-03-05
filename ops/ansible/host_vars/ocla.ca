@@ -1,1 +1,2 @@
 apache_server_name: ocla.ca
+wordpress_site_name: "{{ apache_server_name }}"
