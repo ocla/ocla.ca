@@ -1,2 +1,2 @@
 - name: archive remote backup folder
-  shell: tar -cvzf {{ remote_backup_archive }} {{ remote_backup_dir }}/*
+  shell: tar -cvzf {{ remote_backup_archive }} -C {{ remote_backup_dir }} .
