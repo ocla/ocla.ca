@@ -1,4 +1,8 @@
-bennojoy.nginx
-geerlingguy.apache
-ANXS.mysql
-darthwade.wordpress
+bennojoy.nginx=master
+geerlingguy.apache=1.6.0
+ANXS.mysql=1.2.0
+ANXS.generic-users=1.0.5
+ANXS.fail2ban=1.0.1
+darthwade.wordpress=1.0
+Stouts.openssh=1.2.1
+Stouts.iptables=1.1.0
