@@ -6,6 +6,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+    config.vm.provider "virtualbox" do |db|
+    end
+
     config.vm.define "vagrant.ocla.ca" do |db|
         db.vm.box = "hashicorp/precise32"
         db.vm.network :private_network, ip: "192.168.33.11"
