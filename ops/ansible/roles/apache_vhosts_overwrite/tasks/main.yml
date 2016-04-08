@@ -1,0 +1,3 @@
+- name: upload vhosts.conf (overwriting old)
+  copy: src=vhosts.conf dest=/etc/apache2/sites-available/vhosts.conf
+  sudo: True
