@@ -1,3 +1,7 @@
 - name: upload vhosts.conf (overwriting old)
-  copy: src=vhosts.conf dest=/etc/apache2/sites-available/vhosts.conf
+  template: src=vhosts.conf dest=/etc/apache2/sites-available/vhosts.conf
+  sudo: True
+
+- name: restart apache2 service
+  service: name=apache2 state=restarted
   sudo: True
