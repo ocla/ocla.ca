@@ -8,6 +8,7 @@
     - php_requirements
     - geerlingguy.apache
     - ANXS.mysql
+    - apache_vhosts_overwrite
   sudo: True
 
 - name: group servers which have wordpress installed
