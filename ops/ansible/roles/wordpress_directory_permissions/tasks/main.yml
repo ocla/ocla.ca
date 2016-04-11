@@ -1,0 +1,3 @@
+- name: make www-data owner of the wp-content/uploads/ directory
+  file: dest={{ wp_install_dir }}/wp-content/uploads state=directory owner=www-data recurse=True
+  sudo: True
