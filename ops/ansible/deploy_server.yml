@@ -25,6 +25,7 @@
   roles:
     - darthwade.wordpress
     - wordpress_site_name
+    - wordpress_directory_permissions
   sudo: True
 
 - name: restart apache
