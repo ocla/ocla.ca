@@ -1,5 +1,5 @@
 - name: install supervisorctl
-  apt: name=supervisorctl state=present
+  apt: name=supervisor state=present
   sudo: True
 
 - name: have supervisor watch apache2
