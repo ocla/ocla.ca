@@ -1,0 +1,3 @@
+- name: set mysql max_connections
+  lineinfile: dest=/etc/mysql/my.cnf regexp=^max_connections= line=max_connections=15
+  sudo: True
