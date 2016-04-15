@@ -9,7 +9,6 @@
     - geerlingguy.apache
     - ANXS.mysql
     - apache_vhosts_overwrite
-    - apache_supervisor
     - mysql_max_connections
   sudo: True
 

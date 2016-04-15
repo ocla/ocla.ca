@@ -3,5 +3,5 @@
   sudo: True
 
 - name: have supervisor watch apache2
-  supervisorctl: name=apache2 state=absent
+  supervisorctl: name=apache2 state=present
   sudo: True
